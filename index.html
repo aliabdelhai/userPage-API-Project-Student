@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <script id="store-template-mainUser" type="text/x-handlebars-template">
+            <div id='profile-pic'><img src="{{mainUser.photo}}"></div>
+            <div class='user-info'>{{mainUser.firstName}} {{mainUser.lastName}}<br>
+            {{mainUser.city}}, {{mainUser.state}}</div>  
+    </script>
+
+
+    <script id="store-template-friends" type="text/x-handlebars-template">
+       {{#each friends}}
+            <div class='user-info'>{{firstName}} {{lastName}}</div>
+        {{/each}}    
+    </script>
+
+
+    <script id="store-template-quote" type="text/x-handlebars-template">
+        <p>Favorite quote:</p>
+             <div class='quote'>"{{quote}}"</div>
+             <div class='quote'>- Kanye West</div>
+
+     </script>
+
+     <script id="store-template-pokemonImage" type="text/x-handlebars-template">
+        <div id='pokemon-image'><img src="{{img}}"></div>
+     </script>
+
+
+     <script id="store-template-pokemonName" type="text/x-handlebars-template">
+        <div id='pokemon-text'>Favorite Pokemon: {{pokemonName}}</div>
+     
+    </script>
+
+     <script id="store-template-aboutMe" type="text/x-handlebars-template">
+        <div class='meat-text'>{{text}}</div>
+     </script>
+
+
+
+    <div class="container">	
+        <div class="user-container"></div>	
+        <div class="quote-container"></div>	
+        <div class="content-container">	
+            <div class="pokemon-container"></div>	
+            <div class="meat-container"></div>	
+        </div>	
+        <div class="friends">	
+            <h4>Friends</h4>	
+            <div class="friends-container">	
+            </div>	
+        </div>	
+        <div class="buttons">	
+            <button id='load'>Load User Data</button>	
+            <button id='display'>Display User</button>	
+        </div>	
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="APIManager.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
